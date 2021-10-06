@@ -5,6 +5,7 @@ import Tours from './Tours'
 // I SWITCHED TO PERMANENT DOMAIN
 const url = 'https://course-api.com/react-tours-project';
 function App() {
+<<<<<<< HEAD
 
   const [places, setPlaces] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -49,11 +50,23 @@ function App() {
         </div>
       </main>
     );
+=======
+  
+  async function fetchData(link) {
+    const data = await fetch(link);
+    const result = await data.json();
+    return result;
+>>>>>>> ed286138c322b73274162508b59fccc759548f49
   }
 
   return (
     <main>
+<<<<<<< HEAD
       <Tours places={places} removePlace={removePlace}/>
+=======
+      <h2>Our Tours</h2>
+      <Tours toursList={fetchData(url)} />
+>>>>>>> ed286138c322b73274162508b59fccc759548f49
     </main>
   )
 }

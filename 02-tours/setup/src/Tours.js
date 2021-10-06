@@ -1,5 +1,6 @@
 import React from 'react';
 import Tour from './Tour';
+<<<<<<< HEAD
 const Tours = ({places, removePlace}) => {
   console.log(places);
   return (
@@ -9,6 +10,11 @@ const Tours = ({places, removePlace}) => {
       {places.map((p) => <Tour key={p.id} objectInfo={p} removePlace={removePlace}/>)}
     </div>
     </>
+=======
+const Tours = ({toursList}) => {
+  return (
+    {toursList}
+>>>>>>> ed286138c322b73274162508b59fccc759548f49
   );
 };
 
