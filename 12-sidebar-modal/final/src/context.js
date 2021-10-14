@@ -21,16 +21,7 @@ const AppProvider = ({ children }) => {
   };
 
   return (
-    <AppContext.Provider
-      value={{
-        isSidebarOpen,
-        isModalOpen,
-        openModal,
-        closeModal,
-        openSidebar,
-        closeSidebar,
-      }}
-    >
+    <AppContext.Provider value={{isSidebarOpen, isModalOpen,openModal,closeModal,openSidebar,closeSidebar}}>
       {children}
     </AppContext.Provider>
   );
