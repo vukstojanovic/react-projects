@@ -1,9 +1,10 @@
 import React from 'react';
 import { FaBars } from 'react-icons/fa';
-import { useGlobalContext } from './context';
+import { useGlobalContext } from './context.js';
 
 const Home = () => {
   const { openSidebar, openModal } = useGlobalContext();
+  console.log(useGlobalContext());
   return (
     <main>
       <button onClick={openSidebar} className='sidebar-toggle'>
