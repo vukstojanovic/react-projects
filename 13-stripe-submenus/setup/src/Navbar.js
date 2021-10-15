@@ -6,6 +6,15 @@ import {NewContext} from './context'
 const Navbar = () => {
 
   const {showSidebar, setShowSidebar} = useContext(NewContext);
+  const {openSubmenu, closeSubmenu} = useContext(NewContext);
+  function displaySubmenu(e) {
+    const text = e.target.textContent;
+    const currentLink = e.target.getBoundingClientRect();
+    const center = (currentLink.left + currentLink.right) / 2;
+    const bottom = currentLink.bottom - 3;
+    console.log(currentLink);
+    openSubmenu(text, {center, bottom});
+  }
 
   return (
     <nav className="nav">
@@ -18,13 +27,13 @@ const Navbar = () => {
         </div>
         <ul className="nav-links">
           <li>
-            <button className="link-btn">Products</button>
+            <button className="link-btn" onMouseOver={displaySubmenu}>products</button>
           </li>
           <li>
-            <button className="link-btn">Developers</button>
+            <button className="link-btn" onMouseOver={displaySubmenu}>developers</button>
           </li>
           <li>
-            <button className="link-btn">Company</button>
+            <button className="link-btn" onMouseOver={displaySubmenu}>company</button>
           </li>
         </ul>
         <button className="btn signin-btn">Sign in</button>
